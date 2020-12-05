@@ -1,7 +1,0 @@
-l
-[40.0, 40.0, 10.0, 10.0]
-Cactus Project,83,4
-hlhlhl,77,1
-gggggggg,88,2
-yoell,33,4
-rrrr,55,1

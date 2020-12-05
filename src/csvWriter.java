@@ -27,7 +27,6 @@ public class csvWriter {
         try {
             BufferedReader br = new BufferedReader(new FileReader(pathwrite));
             classStoredPassword = br.readLine();
-            System.out.println(classStoredPassword);
 
         } catch (IOException a) {
             a.printStackTrace();

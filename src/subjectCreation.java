@@ -51,6 +51,7 @@ public class subjectCreation {
 
                 if (firstPassword.equals(secondPassword)) {
                     System.out.println("|Password settings updated|");
+                    System.out.println("|Please write this down along to be used later|");
                     j++;
                 } else {
                     System.out.println("             |YOUR PASSWORDS DID NOT MATCH|");
@@ -83,8 +84,6 @@ public class subjectCreation {
                         System.out.println("Make sure that the number you are entering is out of 100\n");
                     }
                 }
-                
-            
             
                 String pathwrite = "C:\\Users\\mattt\\OneDrive - Florida Gulf Coast University\\School\\Programming\\JAVA (COP2006)\\gradebook_java_class_final\\Grade_Book_Alpha_Code-master\\" + subject + ".txt";
                 File f = null;
@@ -120,6 +119,5 @@ public class subjectCreation {
         new enterToContinue();
         new mainMenuUI(); // calls the main menu interface... only way to stop the program currently is to do so in the
         // main menu
-
     }
 }
