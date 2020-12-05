@@ -96,10 +96,8 @@ public class subjectCreation {
                     //sets the format of the lines so that they can be accessed similarly in the other methods
                     FileWriter write = new FileWriter(pathwrite, true);
                     out = new BufferedWriter(write);
-
                     out.write(firstPassword + "\n");
-
-                    out.write(java.util.Arrays.toString(weightedArray));
+                    out.write(weightedArray[0] + "," + weightedArray [1] +"," + weightedArray[2] + "," + weightedArray [3] + "\n");
                     System.out.println("Grade Weights have been saved\n");
                     new pauseForXAmountOfTime();
                     System.out.println("Subject has been created\n");

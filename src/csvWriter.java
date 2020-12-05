@@ -58,7 +58,7 @@ public class csvWriter {
             }
         }
 
-        for (int i = 1; i < 2;) {
+        for (int i = 1; i <= 1;) {
             String terminate = "no";
 
             //input for assignment type for weighting
@@ -78,43 +78,22 @@ public class csvWriter {
             Integer assignmentGrade = grade.nextInt();
 
 
-            int assignVal;
-            switch (assignmentType){
-                case "exam":
-                    assignVal = 1;
-                    break;
-                case "quiz":
-                    assignVal = 2;
-                    break;
-                case "homework":
-                    assignVal = 3;
-                    break;
-                case "project":
-                    assignVal = 4;
-                    break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + assignmentType);
-            }
+            int assignVal = switch (assignmentType) {
+                case "exam" -> 1;
+                case "quiz" -> 2;
+                case "homework" -> 3;
+                case "project" -> 4;
+                default -> throw new IllegalStateException("Unexpected value: " + assignmentType);
+            };
             //NEED TO GET THE VALUE OF THE ASSIGNMENT TYPE FROM OTHER CLASS AND CONVERT IT INTO A DECIMAL VALUE FOR LATER CALCULATIONS
             //HOW?
-            //double assignVal =
+            String assignmentString = (assignmentName + "," + assignmentGrade + "," + assignVal + ", " +" \n");
 
-
-
-            //creating hashmap for said assignment
-            HashMap<String, ArrayList<Integer>> assignmentMap = new HashMap<String, ArrayList<Integer>>();
-            assignmentMap.put(assignmentName, new ArrayList<>());
-            assignmentMap.get(assignmentName).add(assignmentGrade);
-            assignmentMap.get(assignmentName).add(assignVal);
-
-            System.out.println(assignmentMap);
-
-            //String pathwrite = "C:\\Users\\mattt\\OneDrive - Florida Gulf Coast University\\School\\Programming\\JAVA (COP2006)\\gradebook_java_class_final\\Grade_Book_Alpha_Code-master\\" + subjectRequestWrite + ".txt";
             BufferedWriter out = null;
             try {
                 FileWriter write = new FileWriter(pathwrite, true);
                 out = new BufferedWriter(write);
-                out.write(assignmentMap + "\n");
+                out.write(assignmentString);
                 System.out.println("Your grade has been recorded");
             } catch (IOException e) {
                 e.printStackTrace();
@@ -131,5 +110,7 @@ public class csvWriter {
                 }
             }
         }
+        new enterToContinue();
+        new mainMenuUI();
     }
 }
